@@ -1,3 +1,7 @@
+// Jeff Foreman
+// CSE 100 04L
+// Created on 3 Oct 2017
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,35 +10,35 @@
 
 using namespace std;
 
-
-/****************************************************************
- * CONSTRUCTOR
- ****************************************************************/
-Hash::Hash(int _bNo) {
+// Constructor.
+Hash::Hash(int _bNo) 
+{
+	
 }
 
-/****************************************************************
- * DESTRUCTOR
- ****************************************************************/
-Hash::~Hash() {
-  // Write code to remove and deallocate everything
+// Destructor.
+Hash::~Hash() 
+{
+	
 }
 
-void Hash::Insert(int toInsert) {
-  // Write your code here
+void Hash::Insert(int toInsert) 
+{
+	
 }
 
-bool Hash::Delete(int toDelete) {
-  // Write your code here
+bool Hash::Delete(int toDelete) 
+{
 	return true;
 }
 
-bool Hash::Search(int key, int& _bucket, int& _pos) {
-  // Write your code here
+bool Hash::Search(int key, int& _bucket, int& _pos) 
+{
 	return true;
 }
 
-void Hash::Print() {
-  // Write your code here
+void Hash::Print() 
+{
+	
 }
 

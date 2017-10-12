@@ -100,7 +100,7 @@ void Hash::Print()
 			cout << *j;
 			
 			// Print " -> " as long as it is not at the end of the list.
-			if(j != table[i].back())
+			if(*j != table[i].back())
 				cout << "->";
 		}
 		

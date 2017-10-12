@@ -46,7 +46,7 @@ bool Hash::Delete(int toDelete)
 	int hashKey = toDelete % bNo;
 	
 	// STL iterator for moving through the list portion of the table.
-	for (list<int>::iterator i = table[hashKey].begin(); i != table[hashKey].end(); i++)
+	for(list<int>::iterator i = table[hashKey].begin(); i != table[hashKey].end(); i++)
 	{
 		// If we find the key in the list, delete and return true.
 		if(*i == toDelete)
@@ -73,18 +73,38 @@ bool Hash::Search(int key, int& _bucket, int& _pos)
 	
 	for(list<int>::iterator i = table[hashKey].begin(); i != table[hashKey].end(); i++)
 	{
+		// If we find the key in the list, return true.
 		if(*i == key)
 		{
 			return true;
 		}
+		
+		// Increment the list position.
 		_pos++;
 	}
 	
+	// At this point, the key has not been found, return false.
 	return false;
 }
 
 void Hash::Print() 
 {
-	
+	// Iterate through the vector portion of the table.
+	for(int i = 0; i < bNo; i++)
+	{
+		cout << i << " : ";
+		
+		// Itearte through the list portion of the table.
+		for(list<int>::iterator j = table[i].begin(); j != table[i].end(); j++)
+		{
+			cout << *j;
+			
+			// Print " -> " as long as it is not at the end of the list.
+			if(j + 1 != table[i].end())
+				cout << "->";
+		}
+		
+		cout << endl;
+	}
 }
 

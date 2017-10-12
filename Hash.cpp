@@ -13,7 +13,7 @@ using namespace std;
 // Constructor.
 Hash::Hash(int _bNo) 
 {
-	this.bNo = _bNo;
+	this->bNo = _bNo;
 
 }
 

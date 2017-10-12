@@ -42,27 +42,45 @@ void Hash::Insert(int toInsert)
 // If it doesn't find the key, then it returns false.
 bool Hash::Delete(int toDelete) 
 {
-	// Calculate the hashd key.
+	// Calculate the hashed key.
 	int hashKey = toDelete % bNo;
 	
-	// Iterator for moving through the vector portion of the table.
-	int i = 0;
-	
 	// STL iterator for moving through the list portion of the table.
-	for (list<int>::iterator j = table[hashKey].begin(); j != table[hashKey].end(); j++)
+	for (list<int>::iterator i = table[hashKey].begin(); i != table[hashKey].end(); i++)
 	{
-		if(*j == toDelete)
+		// If we find the key in the list, delete and return true.
+		if(*i == toDelete)
 		{
-			table[hashKey].erase(j);
+			table[hashKey].erase(i);
 			return true;
 		}
 	}
+	
+	// At this point, the key was not found, and therefore the delete failed.
 	return false;
 }
 
 bool Hash::Search(int key, int& _bucket, int& _pos) 
 {
-	return true;
+	// Calculate the hashed key.
+	int hashKey = key % bNo;
+	
+	// The hashed key is the bucket we are looking at.
+	_bucket = hashKey;
+	
+	// Initialize the list position.
+	_pos = 0;
+	
+	for(list<int>::iterator i = table[hashKey].begin(); i != table[hashKey].end() i++)
+	{
+		if(*i == key)
+		{
+			return true;
+		}
+		_pos++;
+	}
+	
+	return false;
 }
 
 void Hash::Print() 

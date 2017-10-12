@@ -53,7 +53,7 @@ bool Hash::Delete(int toDelete)
 	{
 		if(*j == toDelete)
 		{
-			table[hashKey].erase(j);
+			table[hashKey].erase(*j);
 			return true;
 		}
 	}

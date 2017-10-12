@@ -49,11 +49,11 @@ bool Hash::Delete(int toDelete)
 	int i = 0;
 	
 	// STL iterator for moving through the list portion of the table.
-	for (list<int>::const_iterator j = table[hashKey].begin(); j != table[hashKey].end(); j++)
+	for (list<int>::iterator j = table[hashKey].begin(); j != table[hashKey].end(); j++)
 	{
 		if(*j == toDelete)
 		{
-			table[hashKey].erase(*j);
+			table[hashKey].erase(j);
 			return true;
 		}
 	}

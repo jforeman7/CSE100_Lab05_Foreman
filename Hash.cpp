@@ -71,7 +71,7 @@ bool Hash::Search(int key, int& _bucket, int& _pos)
 	// Initialize the list position.
 	_pos = 0;
 	
-	for(list<int>::iterator i = table[hashKey].begin(); i != table[hashKey].end() i++)
+	for(list<int>::iterator i = table[hashKey].begin(); i != table[hashKey].end(); i++)
 	{
 		if(*i == key)
 		{

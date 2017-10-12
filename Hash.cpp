@@ -60,6 +60,8 @@ bool Hash::Delete(int toDelete)
 	return false;
 }
 
+// Function to search for a key in the hash table.
+// If it finds the key, returns true, else false.
 bool Hash::Search(int key, int& _bucket, int& _pos) 
 {
 	// Calculate the hashed key.
@@ -87,6 +89,7 @@ bool Hash::Search(int key, int& _bucket, int& _pos)
 	return false;
 }
 
+// Function to print out the contents of the entire hash table.
 void Hash::Print() 
 {
 	// Iterate through the vector portion of the table.
@@ -100,9 +103,12 @@ void Hash::Print()
 			cout << *j;
 			
 			// Print " -> " as long as it is not at the end of the list.
+			// To do so, increment the iterator. Then check if the iterator is at the end of the list.
+			// If not, then print. 
 			if(++j != table[i].end())
 				cout << "->";
 			
+			// Put the iterator back where it was.
 			--j;
 		}
 		

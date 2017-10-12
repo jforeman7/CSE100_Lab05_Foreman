@@ -13,12 +13,8 @@ using namespace std;
 // Constructor.
 Hash::Hash(int _bNo) 
 {
-	bNo = _bNo;
-	
-	for (int i = 0; i < bNo; i++)
-	{
-		table[bNo] = NULL;
-	}
+	this.bNo = _bNo;
+
 }
 
 // Destructor.

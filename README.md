@@ -1,4 +1,4 @@
-Jeff Foreman | CSE 100 03L | 25 Oct 2017
+Jeff Foreman | CSE 100 03L
 
 # Implementation of a Hash Table
 Pseudocode found in the textbook:
